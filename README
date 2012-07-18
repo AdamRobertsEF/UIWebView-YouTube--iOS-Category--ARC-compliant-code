@@ -1,0 +1,24 @@
+UIWebView+YouTube iOS category to simplify loading youtube videos.
+
+Instructions
+
+1) Add these files to your project
+
+   UIWebView+YouTube.h
+   UIWebView+YouTube.m
+
+2) Initiate UIWebView for example
+
+   @property (strong, nonatomic) UIWebView *webView;
+   @synthesize webView = _webView
+
+   _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,212,172]; //set th e X,Y origin of CGRect to where you want the webView to appear.
+
+   _webView.delegate = self;
+   [_webView loadYouTubeVideoID:@"gR8dO7Cln6M"];
+   [self.view addSubView:_webView];
+
+
+
+
+

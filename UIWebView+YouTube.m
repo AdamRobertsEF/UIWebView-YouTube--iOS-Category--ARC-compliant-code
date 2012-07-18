@@ -55,6 +55,9 @@
 
 -(void)loadYouTubeVideoID:(NSString*)videoID{
     
+    self.scrollView.bounces = NO;
+    self.scrollView.scrollEnabled = NO;
+    
     //set local path for file
     NSString *filePath = [NSString stringWithFormat:@"%@/%@",
                           [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0],
