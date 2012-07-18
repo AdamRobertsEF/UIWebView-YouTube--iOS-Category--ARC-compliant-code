@@ -12,7 +12,8 @@ Instructions
    @property (strong, nonatomic) UIWebView *webView;
    @synthesize webView = _webView
 
-   _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,212,172]; //set th e X,Y origin of CGRect to where you want the webView to appear.
+   _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,212,172];
+   //set the X,Y origin of CGRect to where you want the webView to appear.
 
    _webView.delegate = self;
    [_webView loadYouTubeVideoID:@"gR8dO7Cln6M"];
