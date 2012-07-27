@@ -39,11 +39,11 @@
 }
 
 -(NSString *)youTubeEmbedHTMLFromVideoID:(NSString *)videoID{
-    
-    NSString *htmlString = @"<html><head> <meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = \"212\"/></head> <body style=\"background:#000000;margin-top:0px;margin-left:0px\"> <div><object width=\"212\" height=\"172\"> <param name=\"movie\" value=\"%@\"></param> <param name=\"wmode\" value=\"transparent\"></param> <embed src=\"%@\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"212\" height=\"172\"></embed> </object></div></body></html>";
+
+    NSString *htmlString = @"<html><head> <meta name = \"viewport\" content = \"initial-scale = 1.0, user-scalable = no, width = \"%f\"/></head> <body style=\"background:#000000;margin-top:0px;margin-left:0px\"> <div><object width=\"%f\" height=\"%f\"> <param name=\"movie\" value=\"%@\"></param> <param name=\"wmode\" value=\"transparent\"></param> <embed src=\"%@\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"%f\" height=\"%f\"></embed> </object></div></body></html>";
     
     // Populate HTML with the URL and requested frame size
-    NSString *html = [NSString stringWithFormat:htmlString,[self youTubeVideoURLFromVideoID:videoID],[self youTubeVideoURLFromVideoID:videoID]];
+    NSString *html = [NSString stringWithFormat:htmlString,self.frame.size.width,self.frame.size.width,self.frame.size.height,[self youTubeVideoURLFromVideoID:videoID],[self youTubeVideoURLFromVideoID:videoID],self.frame.size.width,self.frame.size.height];
 
     #ifdef DEBUG
     NSLog(@"YouTube Embed HTML:%@",html);
